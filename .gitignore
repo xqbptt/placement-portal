@@ -90,6 +90,10 @@ celerybeat-schedule
 .venv
 venv/
 ENV/
+win-venv/
+pp-env/
+
+
 .vscode
 # Spyder project settings
 .spyderproject
