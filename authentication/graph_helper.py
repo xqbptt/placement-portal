@@ -1,10 +1,17 @@
-from requests_oauthlib import OAuth2Session
+import requests
+import json
 
 graph_url = 'https://graph.microsoft.com/v1.0'
 
 def get_user(token):
-  graph_client = OAuth2Session(token=token)
   # Send GET to /me
-  user = graph_client.get('{0}/me'.format(graph_url))
+  user = requests.get(
+    '{0}/me'.format(graph_url),
+    headers={
+      'Authorization': 'Bearer {0}'.format(token)
+    },
+    params={
+      '$select': 'displayName,mail,userPrincipalName'
+    })
   # Return the JSON result
   return user.json()

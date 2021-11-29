@@ -32,7 +32,6 @@ ALLOWED_HOSTS = ['*']
 # if not DEBUG:
 #     SECURE_SSL_REDIRECT = True
 
-# AUTH_USER_MODEL = "authentication.User"
 
 # Application definition
 
@@ -51,7 +50,7 @@ INSTALLED_APPS = [
 
 ]
 
-AUTH_USER_MODEL = 'authentication.User'
+# AUTH_USER_MODEL = 'authentication.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -149,9 +148,8 @@ MEDIA_URL = "/placement-portal/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 LOGIN_URL="signin"
-# when login is required, user will be redirected to this url
-# LOGIN_REDIRECT_URL='charts'
 
+# when login is required, user will be redirected to this url
 LOGOUT_REDIRECT_URL='home'
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 102400
