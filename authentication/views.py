@@ -9,9 +9,8 @@ from django.contrib.auth.models import User
 # from .models import User
 from django.contrib.auth import authenticate, login, logout
 import re
-
 User._meta.get_field('email')._unique = True
-User._meta.get_field('username')._unique = False
+User._meta.get_field('username')._unique = True
 
 def initialize_context(request):
   context = {}
